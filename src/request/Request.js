@@ -2,13 +2,13 @@ import React from 'react'
 
 
 
-function Teacher() {
+function Request() {
     return (
       <div   >
             <div style={{"float":'left'}}><img   width="150" height="150" src="/teacher.jpg"/></div>
             <div  style={{"float":'left'}}>
-                Name:<b>Niranjan</b><br></br>
-                Locatin:<b>kathmandu</b><br></br>
+                Id:<b>1111</b><br></br>
+                School:<b>kathmandu</b><br></br>
                 Subject:<b>English ,math</b><br></br>
                 Time:<b>Day</b><br></br>
                 <button>Book</button>
@@ -17,4 +17,6 @@ function Teacher() {
     );
   }
   
-  export default Teacher;
+  export default Request;
+
+ 

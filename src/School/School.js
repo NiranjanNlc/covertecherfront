@@ -2,19 +2,18 @@ import React from 'react'
 
 
 
-function Teacher() {
+function School() {
     return (
       <div   >
             <div style={{"float":'left'}}><img   width="150" height="150" src="/teacher.jpg"/></div>
             <div  style={{"float":'left'}}>
-                Name:<b>Niranjan</b><br></br>
+                Id:<b>1</b><br></br>
+                Name:<b>Mind Light </b><br></br>
                 Locatin:<b>kathmandu</b><br></br>
-                Subject:<b>English ,math</b><br></br>
-                Time:<b>Day</b><br></br>
-                <button>Book</button>
+                <button>Send Request</button>
     </div>
       </div>
     );
   }
   
-  export default Teacher;
+  export default School;
