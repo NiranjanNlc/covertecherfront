@@ -8,9 +8,15 @@ function App() {
   return (
     <div className="App">
       <Teacher></Teacher>
+<<<<<<< HEAD
       <School></School>   
         
       <Request></Request>
+=======
+      {/* <School></School>
+        
+      <Request></Request> */}
+>>>>>>> 98bab5c85754a0704030b23b0ea6e44189d2f358
     </div>
   );
 }
