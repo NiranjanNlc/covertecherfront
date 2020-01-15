@@ -11,19 +11,31 @@ import TeacherForm  from './Form/TeacherForm.js'
 import './index.css';
 import App from './App'; 
 import * as serviceWorker from './serviceWorker';
-import Login from './Form/Login';
-import AuthenciatedRoute from './AuthenciatedRoute';
+import Login from './Form/Login'; 
+import AuthenciatedRoute from './AuthenciatedRoute'
 
 ReactDOM.render(
 <Router>
-    <AuthenciatedRoute path = "/" exact component = {App}/>
+    <>
+    <AuthenciatedRoute path = "/" exact component = {Request}/>
         <Route path = "/login/" component = {Login} />
        <AuthenciatedRoute path = "/school/" component = {School} />
        <AuthenciatedRoute path = "/teacher/" component = {Teacher} />
-     
+       
+       <AuthenciatedRoute path = "/request/" component = {Request} />
+       
+       <AuthenciatedRoute path = "/add/" component = {TeacherForm} />
+     </>
    </Router>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
+{/* <Router>
+    <AuthenciatedRoute path = "/" exact component = {App}/>
+        <Route path = "/login/" component = {Login} />
+       <AuthenciatedRoute path = "/school/" component = {School} />
+       <AuthenciatedRoute path = "/teacher/" component = {Teacher} />
+     
+   </Router> */}
 serviceWorker.unregister();

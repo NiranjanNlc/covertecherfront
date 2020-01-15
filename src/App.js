@@ -13,7 +13,12 @@ import AddRequest from './Form/AddRequest';
 function App() {
   return (
     <div>  
-       Hello working
+        {/* <Login/>
+        <Teacher/>
+        <School/>
+        <TeacherForm/>
+        <Login/> */}
+        <Login/>
    </div>
  
   )
