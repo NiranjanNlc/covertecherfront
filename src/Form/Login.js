@@ -29,22 +29,32 @@ class Login extends React.Component {
   
   submitData(event)
   {
-    console.log("hello hunny bunny ")
-    console.log(this.state.uname)
-     if(this.state.uname==='nlc'&& this.state.psw==='nlc')
-     {
-       AuthenticationService.registerSuccessfulLogin(this.state.uname,this.state.psw)
-       this.props.history.push("/school/")
+    // console.log("hello hunny bunny ")
+    // console.log(this.state.uname)
+    //  if(this.state.uname==='nlc'&& this.state.psw==='nlc')
+    //  {
+    //    AuthenticationService.registerSuccessfulLogin(this.state.uname,this.state.psw)
+    //    this.props.history.push("/school/")
      
-     } 
-     else
-     {
-      this.setState(
-        {sucessLogin :false,
-          failedLogin:true
-          }
-      )
-     }
+    //  } 
+    //  else
+    //  {
+    //   this.setState(
+    //     {sucessLogin :false,
+    //       failedLogin:true
+    //       }
+    //   )
+    //  }
+    AuthenticationService
+    .executeBasicAuthenticationService(this.state.username, this.state.password)
+    .then(() => {
+        AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password)
+        this.props.history.push(`/courses`)
+    }).catch(() => {
+        this.setState({ showSuccessMessage: false })
+        this.setState({ hasLoginFailed: true })
+    })
+
   }
 render() {
   if (AuthenticationService.isUserLoggedIn()) return <Redirect to="/school" />

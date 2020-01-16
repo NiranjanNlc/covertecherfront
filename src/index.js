@@ -15,18 +15,7 @@ import Login from './Form/Login';
 import AuthenciatedRoute from './AuthenciatedRoute'
 
 ReactDOM.render(
-<Router>
-    <>
-    <AuthenciatedRoute path = "/" exact component = {Request}/>
-        <Route path = "/login/" component = {Login} />
-       <AuthenciatedRoute path = "/school/" component = {School} />
-       <AuthenciatedRoute path = "/teacher/" component = {Teacher} />
-       
-       <AuthenciatedRoute path = "/request/" component = {Request} />
-       
-       <AuthenciatedRoute path = "/add/" component = {TeacherForm} />
-     </>
-   </Router>, document.getElementById('root'));
+ <App/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
