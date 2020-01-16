@@ -1,7 +1,5 @@
 import React from 'react'
-import "./AddRequest.css"
-
-function AddRequest() {
+function AddSchool() {
     return (
         <div>
               <form   method="post">
@@ -13,13 +11,13 @@ function AddRequest() {
     <label for="sname"><b>Schoolname</b></label>
     <input type="text" placeholder="Enter Schoolname" name="sname" required/>
  
-    <label for="sname"><b>Location </b></label>
+    <label for="loc"><b>Location </b></label>
     <input type="text" placeholder="Enter Location " name="sub" required/>
 
-    <label for="sname"><b>Time</b></label>
+    <label for="id"><b>RegistrationId</b></label>
     <input type="text" placeholder="Enter Time" name="time" required/>
 
-    <button type="submit">ADD REQUEST </button>
+    <button type="submit">Register School </button>
     <button type="submit" style={{"backgroundColor":"#f44336", "textAlign": 'center',marginTop:"4px"}}>Clear</button>
     
   </div>
@@ -32,4 +30,4 @@ function AddRequest() {
         </div>
     )
 }
-export default AddRequest
+export default AddSchool

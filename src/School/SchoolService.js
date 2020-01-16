@@ -6,6 +6,11 @@ class SchoolService {
         console.log("i am in reterive School")
         return axios.get(`${SCHOOL_API_URL}`);
     }
+    addSchool()
+    {
+        console.log("i am in reterive School")
+        return axios.get(`${SCHOOL_API_URL}`);
+    }
 }
 export default new SchoolService()
 

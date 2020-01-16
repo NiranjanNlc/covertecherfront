@@ -29,31 +29,40 @@ class Login extends React.Component {
   
   submitData(event)
   {
-    // console.log("hello hunny bunny ")
-    // console.log(this.state.uname)
-    //  if(this.state.uname==='nlc'&& this.state.psw==='nlc')
-    //  {
-    //    AuthenticationService.registerSuccessfulLogin(this.state.uname,this.state.psw)
-    //    this.props.history.push("/school/")
+    console.log("hello hunny bunny ")
+    console.log(this.state.uname)
+     if(this.state.uname==='nlc'&& this.state.psw==='nlc')
+     {
+       AuthenticationService.registerSuccessfulLogin(this.state.uname,this.state.psw)
+       this.props.history.push("/school/")
      
-    //  } 
-    //  else
-    //  {
-    //   this.setState(
-    //     {sucessLogin :false,
-    //       failedLogin:true
-    //       }
-    //   )
-    //  }
-    AuthenticationService
-    .executeBasicAuthenticationService(this.state.username, this.state.password)
-    .then(() => {
-        AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password)
-        this.props.history.push(`/courses`)
-    }).catch(() => {
-        this.setState({ showSuccessMessage: false })
-        this.setState({ hasLoginFailed: true })
-    })
+     } 
+     else
+     {
+      this.setState(
+        {sucessLogin :false,
+          failedLogin:true
+          
+        }
+          
+      )
+      this.setState(
+        {sucessLogin :false,
+          failedLogin:true
+          
+        }
+      )
+      this.props.history.push("/login/")
+     }
+    // AuthenticationService
+    // .executeBasicAuthenticationService(this.state.username, this.state.password)
+    // .then(() => {
+    //     AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password)
+    //     this.props.history.push(`/courses`)
+    // }).catch(() => {
+    //     this.setState({ showSuccessMessage: false })
+    //     this.setState({ hasLoginFailed: true })
+    // })
 
   }
 render() {
@@ -66,7 +75,7 @@ render() {
   </div> */}
 
   <div className="container">
-    {this.state.failedLogin &&  <div style={{"background-color":"#f44336", "text-align": 'center'}}>Invalid credentials</div>}
+    {this.state.failedLogin &&  <div style={{"backgroundColor":"#f44336", "textAlign": 'center'}}>Invalid credentials</div>}
      <label ><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" value={this.state.uname}  onChange={this.handleChange} required/>
 
@@ -74,14 +83,19 @@ render() {
     <input type="password" placeholder="Enter Password" name="psw" value={this.state.psw}  onChange={this.handleChange} required/>
 
     <button type="submit" onClick={this.submitData}>Login</button>
-    <label>
-      <input type="checkbox" name="remb" value={this.state.remb}  onChange={this.handleChange} /> Remember me
-    </label>
-  </div>
-  <div>
-    <button type="button" className="cancelbtn">Cancel</button>
-    <span className="psw">Forgot <a href="#">password?</a></span>
-  </div>
+     <label style={{"float":"left"}}>
+      <input type="checkbox" name="remb" 
+      value={this.state.remb} 
+      
+       onChange={this.handleChange}
+      /> Remember me
+     </label> 
+    {/* <button type="button" className="cancelbtn">Cancel</button> */}
+    <span  style={{"float":"right"}} >Forgot <a href="#">password?</a></span>
+    <br></br>
+    <br></br>
+    </div>
+   
 </form>
       </div> 
 )

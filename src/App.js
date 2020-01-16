@@ -12,6 +12,7 @@ import AddRequest from './Form/AddRequest';
 
 import AuthenciatedRoute from './AuthenciatedRoute'
 import MenuComponent from './footer/MenuComponent';
+import AddSchool from './School/AddSchool';
 function App() {
   return (
     <div> 
@@ -19,13 +20,14 @@ function App() {
           <MenuComponent/>
     <>
     <Switch>
-    <AuthenciatedRoute path = "/" exact component = {Request}/>
+      <AuthenciatedRoute path = "/" exact component = {Request}/>
         <Route path = "/login/" component = {Login} />
        <AuthenciatedRoute path = "/school/" component = {School} />
        <AuthenciatedRoute path = "/teacher/" component = {Teacher} />
        
        <AuthenciatedRoute path = "/request/" component = {Request} />
-       
+       <AuthenciatedRoute path = "/addrequest/" component = {AddRequest} />
+       <AuthenciatedRoute path = "/register/" component = {AddSchool} />
        <AuthenciatedRoute path = "/add/" component = {TeacherForm} />
        </Switch>
      </>

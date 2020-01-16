@@ -16,6 +16,11 @@ class MenuComponent extends Component {
                     <li><Link className="nav-link" to="/school">School</Link></li>
                     <li><Link className="nav-link" to="/teacher">Teacher</Link></li>
                     <li><Link className="nav-link" to="/request">Request</Link></li>
+                    <li><Link className="nav-link" to="/addrequest">AddRequest</Link></li>
+                    
+                    <li><Link className="nav-link" to="/add">TeacherForm</Link></li>
+                    <li><Link className="nav-link" to="/register">RegisterSchool</Link></li>
+                    
                     </ul>
                     <ul className="navbar-nav navbar-collapse justify-content-end">
                         {!isUserLoggedIn && <li><Link className="nav-link" to="/login">Login</Link></li>}
