@@ -66,7 +66,11 @@ class Login extends React.Component {
 
   }
 render() {
-  if (AuthenticationService.isUserLoggedIn()) return <Redirect to="/school" />
+  if (AuthenticationService.isUserLoggedIn()) 
+  {
+    console.log("trying to open login page")
+    return <Redirect to="/school" />
+  }
   return (
    <div className="Login">   
    <form >

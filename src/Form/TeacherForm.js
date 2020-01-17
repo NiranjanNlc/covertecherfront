@@ -17,15 +17,18 @@ function TeacherForm()
     <input type="text" placeholder="Enter full name" name="name" required/>
 
     
-    <label for="Subject"><b>Email</b></label>
-    <input type="text" placeholder="Enter Subject" name="sub" required/>
+    <label for="Phone"><b>Phone </b></label>
+    <input type="text" placeholder="Enter Phone " name="ph" required/>
     
     <label for="location"><b>Location </b></label>
     <input type="text" placeholder="Enter Location" name="loc" required/>
 
     
-    <label for="time"><b>Email</b></label>
+    <label for="time"><b>Time</b></label>
     <input type="text" placeholder="Enter time/shift" name="time" required/>
+    
+    <label for="Subject"><b>Subject</b></label>
+    <input type="text" placeholder="Enter Subject" name="Subject" required/>
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required/>

@@ -34,8 +34,9 @@ class Request extends React.Component {
                          <div style={{"float":'left',"padding":'2px'}}>
                           <div  ><img   width="150" height="150" src="https://polkadottango.files.wordpress.com/2012/03/open-book.jpg"/></div>
                          <div  key ={Request.id} style={{"float":'left'}}> 
-                         SchoolName:<b>{Request.name}</b><br></br>
-                         Locatin:<b>{Request.location}</b><br></br> 
+                         SchoolName:<b>{Request.school}</b><br></br>
+                         Subject:<b>{Request.subject}</b><br></br> 
+                         Locatin:<b>Nijgadh</b><br></br> 
                          Time :<b>{Request.time}</b><br></br>
                           <button>Book Request</button>
                          </div></div>
