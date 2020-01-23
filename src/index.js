@@ -12,7 +12,7 @@ import './index.css';
 import App from './App'; 
 import * as serviceWorker from './serviceWorker';
 import Login from './Form/Login'; 
-import AuthenciatedRoute from './AuthenciatedRoute'
+import AuthenciatedRoute from './Authenciation/AuthenciatedRoute'
 import AddSchool from './School/AddSchool';
 
 ReactDOM.render(

@@ -1,8 +1,7 @@
-import axios from 'axios' 
+import axios from 'axios'
 const API_URL = 'http://localhost:9001'
 export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
-class AuthenticationService
-{
+class AuthenticationService {
 
     executeBasicAuthenticationService(username, password) {
         console.log(this.createBasicAuthToken(username, password))
@@ -13,13 +12,12 @@ class AuthenticationService
         return 'Basic ' + window.btoa(username + ":" + password)
     }
 
-    registerSuccessfulLogin(username, password)
-     {
-         console.log("heeloo set "+username)
-      localStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)
-    //  this.setupAxiosInterceptors(this.createBasicAuthToken(username, password))
+    registerSuccessfulLogin(username, password) {
+        console.log("heeloo set " + username)
+        localStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)
+        //  this.setupAxiosInterceptors(this.createBasicAuthToken(username, password))
 
-     }
+    }
 
 
     logout() {
@@ -48,4 +46,4 @@ class AuthenticationService
         )
     }
 }
- export default new  AuthenticationService()
+export default new AuthenticationService()

@@ -6,10 +6,11 @@ export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
 
 class AuthenticatedRoute extends Component {
     render() {
-        if (localStorage.getItem(USER_NAME_SESSION_ATTRIBUTE_NAME)===null) {
+        if (localStorage.getItem(USER_NAME_SESSION_ATTRIBUTE_NAME) === null) {
             return <Redirect to="/login" />
         } else {
-            return <Route {...this.props} />}
+            return <Route {...this.props} />
+        }
 
     }
 }
