@@ -8,8 +8,7 @@ export const SCHOOL_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedSchool'
 
 class AuthenticatedRoute extends Component {
     render() {
-        if ((localStorage.getItem(USER_NAME_SESSION_ATTRIBUTE_NAME) === null)
-        &&(localStorage.getItem(SCHOOL_NAME_SESSION_ATTRIBUTE_NAME)===null))
+        if ((localStorage.getItem(USER_NAME_SESSION_ATTRIBUTE_NAME) === null))
         {
             console.log('hello from redirection')
             return <Redirect to="/login" />

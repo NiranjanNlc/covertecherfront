@@ -1,25 +1,27 @@
 import axios from 'axios'
+import AuthenticationService from '../Authenciation/AuthenticationService'
 const API_URL = 'http://localhost:9001'
 const SCHOOL_API_URL = `${API_URL}/school/list`
-const ADD_SCHOOL_API_URL = `${API_URL}/school/save`
+const ADD_SCHOOL_API_URL = `${API_URL}/api/auth/signup`
+export const TOKEN="token"
+const headers = { 
+  'Authorization': 'Bearer '+localStorage.getItem(TOKEN)
+}
 class SchoolService {
   retrieveAllSchool() {
     console.log("i am in reterive School")
-    return axios.get(`${SCHOOL_API_URL}`);
+    return axios.get(`${SCHOOL_API_URL}`,{headers:headers});
   }
   addSchool() {
     console.log("i am in reterive School")
     return axios.get(`${SCHOOL_API_URL}`);
   }
-  addSchoolRequest($school, $loc, $rid) {
-    console.log("add requested")
+  addSchoolRequest($signupschool) {
+   // console.log(JSON.parse($signupschool))
     //  console.log($school+$subjet+$time)
-    axios.post(ADD_SCHOOL_API_URL, {
-      name: $school,
-      location: $loc,
-      rid: $rid
-    })
+    axios.post(ADD_SCHOOL_API_URL,$signupschool)
       .then(function (response) {
+      
         console.log(response);
       })
       .catch(function (error) {

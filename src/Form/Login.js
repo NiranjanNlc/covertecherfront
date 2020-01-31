@@ -2,7 +2,7 @@ import React from 'react';
 // import logo from './logo.svg';
 import './Login.css';
 
-import { BrowserRouter as Router, Route, history, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, history, Redirect ,Link} from 'react-router-dom'
 
 import AuthenticationService from '../Authenciation/AuthenticationService';
 
@@ -36,33 +36,37 @@ class Login extends React.Component {
     console.log(this.state.role)
 
      
-    if (this.state.uname === 'nlc' && this.state.psw === 'nlc') {
-      AuthenticationService.registerSuccessfulLogin(this.state.uname, this.state.psw)
-      this.props.history.push("/school/")
+    // if (this.state.uname === 'nlc' && this.state.psw === 'nlc') {
+    //   AuthenticationService.registerSuccessfulLogin(this.state.uname, this.state.psw)
+    //   this.props.history.push("/school/")
 
-    }
-     if (this.state.uname === 'MindLight' && this.state.psw === 'MindLight') {
-      console.log(this.state.uname)
-      AuthenticationService.registerSchoolLogin(this.state.uname, this.state.psw)
-      this.props.history.push("/school/")
+    // }
+    //  if (this.state.uname === 'MindLight' && this.state.psw === 'MindLight') {
+    //   console.log(this.state.uname)
+    //   AuthenticationService.registerSchoolLogin(this.state.uname, this.state.psw)
+    //   this.props.history.push("/school/")
 
 
-    }
-    else{
-      this.props.history.push("/login/")
-    }
-    
+    // }
+    // else{
+    //   this.props.history.push("/login/")
+    // }
+    const signIn = { 
+      usernameOrEmail: this.state.uname,
+      password: this.state.psw
+    };    
+    AuthenticationService
+    .executeJwtAuthenticationService(signIn)
+    .then((response) => {
+      console.log( response.data.accessToken)
+        AuthenticationService.registerSuccessfulLoginForJwt(this.state.username, response.data.accessToken)
+        this.props.history.push(`/school`)
+    }).catch(() => {
+        this.setState({ showSuccessMessage: false })
+        this.setState({ hasLoginFailed: true })
+    })
   }
-    // AuthenticationService
-    // .executeBasicAuthenticationService(this.state.username, this.state.password)
-    // .then(() => {
-    //     AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password)
-    //     this.props.history.push(`/courses`)
-    // }).catch(() => {
-    //     this.setState({ showSuccessMessage: false })
-    //     this.setState({ hasLoginFailed: true })
-    // })
-
+   
   
   render() {
     if (AuthenticationService.isUserLoggedIn()) {
@@ -100,7 +104,7 @@ class Login extends React.Component {
               /> Remember me
      </label>
             {/* <button type="button" className="cancelbtn">Cancel</button> */}
-            <span style={{ "float": "right" }} >Forgot <a href="#">password?</a></span>
+            <span style={{ "float": "right" }} >Register <Link to="/chose"> now??</Link></span>
             <br></br>
             <br></br>
           </div>

@@ -10,14 +10,15 @@ class TeacherForm extends React.Component {
       loc: 'nn',
       ph: '',
       sub: 'nn',
-      time: 'nnn'
+      tim: 'nnn',
+      psw:'ajjjs'
     }
     this.submitData = this.submitData.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange(event) {
-    console.log(event.target.value)
+    console.log(event.target)
     const { name, value } = event.target
     this.setState({
       [name]: value
@@ -27,7 +28,19 @@ class TeacherForm extends React.Component {
   submitData(event) {
 
     console.log(this.state.name)
-    TeacherService.saveTeacher(this.state.name, this.state.sub, this.state.time, this.state.loc, this.state.ph)
+    const teaxherSignup = {
+      name: this.state.name,
+      userId:this.state.name,
+      location: this.state.loc,
+      phone: this.state.ph ,
+      time:this.state.tim,
+      subject:
+             [{sub :this.state.sub}],
+      password: this.state.psw,
+      email:"nlc@gmail.com",
+      roles:"teacher"
+    };
+    TeacherService.saveTeacher(teaxherSignup)
 
   }
   render() {
@@ -53,16 +66,16 @@ class TeacherForm extends React.Component {
 
 
             <label for="time"><b>Time</b></label>
-            <input type="text" placeholder="Enter time/shift" name="time" required onChange={this.handleChange} />
+            <input type="text" placeholder="Enter time/shift" name="tim" required onChange={this.handleChange} />
 
             <label for="Subject"><b>Subject</b></label>
             <input type="text" placeholder="Enter Subject" name="sub" required onChange={this.handleChange} />
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required onChange={this.handleChange} />
-
+{/* 
             <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" required onChange={this.handleChange} />
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" required onChange={this.handleChange} /> */}
 
             <label>
               <input type="checkbox" checked="checked" name="remember" style={{ "margin-bottom": "15px" }} /> Remember me

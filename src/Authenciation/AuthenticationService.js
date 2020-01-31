@@ -2,8 +2,21 @@ import axios from 'axios'
 const API_URL = 'http://localhost:9001'
 export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
 export const SCHOOL_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedSchool'
+export const TOKEN="token"
+ 
 class AuthenticationService {
+    //Added function for the jwt 
+    executeJwtAuthenticationService($signin)
+     {
+        return axios.post(`${API_URL}/api/auth/signin`,$signin)
+    }
 
+    registerSuccessfulLoginForJwt(username, token) {
+        console.log(token)
+        localStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)
+        localStorage.setItem(TOKEN,token)
+        this.setupAxiosInterceptors(this.createJWTToken(token))
+    }
     executeBasicAuthenticationService(username, password) {
         console.log(this.createBasicAuthToken(username, password))
         return axios.get(`${API_URL}/basicauth`,
@@ -49,9 +62,10 @@ class AuthenticationService {
     }
 
     setupAxiosInterceptors(token) {
+        console.log(token)
         axios.interceptors.request.use(
             (config) => {
-                if (this.isUserLoggedIn()) {
+                if (token) {
                     config.headers.authorization = token
                 }
                 return config

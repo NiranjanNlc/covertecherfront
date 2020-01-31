@@ -13,6 +13,8 @@ import AddRequest from './Form/AddRequest';
 import AuthenciatedRoute from './Authenciation/AuthenciatedRoute'
 import MenuComponent from './MenuBar/MenuComponent';
 import AddSchool from './School/AddSchool';
+import Signup from './LoginSignUp/Signup';
+import Choice from './Form/Choice';
 function App() {
   return (
     <div>
@@ -28,7 +30,11 @@ function App() {
             <AuthenciatedRoute path="/request/" component={Request} />
             <AuthenciatedRoute path="/addrequest/" component={AddRequest} />
             <AuthenciatedRoute path="/register/" component={AddSchool} />
-            <AuthenciatedRoute path="/add/" component={TeacherForm} />
+            <Route path="/add/" component={TeacherForm} />
+            <Route path="/chose/" component={Choice} />
+            
+            
+            <Route path="/signup/" component={AddSchool} />
           </Switch>
         </>
 
