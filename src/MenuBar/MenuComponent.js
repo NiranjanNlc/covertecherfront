@@ -19,9 +19,9 @@ class MenuComponent extends Component {
                      {isSchoolLoggedIn &&  <li><Link className="nav-link" to="/teacher">Teacher</Link></li>}
                      {isUserLoggedIn &&  <li><Link className="nav-link" to="/request">Request</Link></li>}
                      {isSchoolLoggedIn &&   <li><Link className="nav-link" to="/addrequest">AddRequest</Link></li>}
-
+{/* 
                      {isUserLoggedIn &&   <li><Link className="nav-link" to="/add">TeacherForm</Link></li>}
-                     {isSchoolLoggedIn &&   <li><Link className="nav-link" to="/register">RegisterSchool</Link></li>}
+                     {isSchoolLoggedIn &&   <li><Link className="nav-link" to="/register">RegisterSchool</Link></li>} */}
 
                     </ul>
                     <ul className="navbar-nav navbar-collapse justify-content-end">

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Route, Redirect } from 'react-router-dom'
+import {Route, Redirect } from 'react-router-dom'
+
 import AuthenticationService from './AuthenticationService';
 
 export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
@@ -17,7 +18,9 @@ class AuthenticatedRoute extends Component {
         
         {
         //    console.log(SCHOOL_NAME_SESSION_ATTRIBUTE_NAME)
-            return <Route {...this.props} />
+            return (
+        <Route {...this.props} /> 
+            )
         }
 
     }

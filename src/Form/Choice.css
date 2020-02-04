@@ -1,10 +1,12 @@
-.center{
+.center
+{
     display:flex; 
     margin-top: 10%;
     
 }
  
-#form {  
+#form
+ {  
     margin:auto;
     border: 0px;/* nice thing of auto margin if display:flex; it center both horizontal and vertical :) */
   }
