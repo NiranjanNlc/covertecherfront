@@ -13,7 +13,7 @@ import AddRequest from './Form/AddRequest';
 import AuthenciatedRoute from './Authenciation/AuthenciatedRoute'
 import MenuComponent from './MenuBar/MenuComponent';
 import AddSchool from './School/AddSchool';
-import Signup from './LoginSignUp/Signup';
+import Home from './HomePage/Home' 
 import Choice from './Form/Choice';
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         <MenuComponent />
         <>
           <Switch>
-            <AuthenciatedRoute path="/" exact component={Request} />
+            <Route path="/" exact component={Home} />
             <Route path="/login/" component={Login} />
             <AuthenciatedRoute path="/school/" component={School} />
             <AuthenciatedRoute path="/teacher/" component={Teacher} />
@@ -33,8 +33,8 @@ function App() {
             <Route path="/add/" component={TeacherForm} />
             <Route path="/chose/" component={Choice} />
             
-            
-            <Route path="/signup/" component={AddSchool} />
+{/*             
+            <Route path="/signup/" component={AddSchool} /> */}
           </Switch>
         </>
 

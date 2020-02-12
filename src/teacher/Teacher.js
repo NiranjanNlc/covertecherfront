@@ -10,9 +10,9 @@ class Teacher extends React.Component {
         }
         this.refreshTeacher = this.refreshTeacher.bind(this)
     }
-    componentDidMount() {
-        this.refreshTeacher();
-    }
+    // componentDidMount() {
+    //     this.refreshTeacher();
+    // }
     refreshTeacher() {
         TeacherService.retrieveAllTeacher()
             .then(
@@ -23,8 +23,7 @@ class Teacher extends React.Component {
             )
     }
     render() {
-
-
+          this.refreshTeacher()
         return (
             <div>                 {
                 this.state.teachers.map(

@@ -58,9 +58,11 @@ class Login extends React.Component {
     AuthenticationService
     .executeJwtAuthenticationService(signIn)
     .then((response) => {
+      console.log(response)
       console.log( response.data.accessToken)
-        AuthenticationService.registerSuccessfulLoginForJwt(this.state.username, response.data.accessToken)
-        this.props.history.push(`/school`)
+        AuthenticationService.registerSuccessfulLoginForJwt(this.state.uname, response.data.accessToken,response.data.role)
+        console.log("trying to push ")
+       // this.props.history.push(`/school`)
     }).catch(() => {
         this.setState({ showSuccessMessage: false })
         this.setState({ hasLoginFailed: true })
@@ -70,6 +72,11 @@ class Login extends React.Component {
   
   render() {
     if (AuthenticationService.isUserLoggedIn()) {
+      console.log("trying to open login page")
+      return <Redirect to="/school" />
+    }
+    if (AuthenticationService.isSchoolLoggedIn() )
+    {
       console.log("trying to open login page")
       return <Redirect to="/school" />
     }

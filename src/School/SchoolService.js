@@ -1,10 +1,10 @@
 import axios from 'axios'
 import AuthenticationService from '../Authenciation/AuthenticationService'
-const API_URL = 'http://localhost:9001'
+const API_URL = ''
 const SCHOOL_API_URL = `${API_URL}/school/list`
 const ADD_SCHOOL_API_URL = `${API_URL}/api/auth/signup`
 export const TOKEN="token"
-const headers = { 
+ export const headers = { 
   'Authorization': 'Bearer '+localStorage.getItem(TOKEN)
 }
 class SchoolService {

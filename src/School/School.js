@@ -11,9 +11,9 @@ class School extends React.Component {
         }
         this.refreshSchool = this.refreshSchool.bind(this)
     }
-    componentDidMount() {
-        this.refreshSchool();
-    }
+    // componentDidMount() {
+    //     this.refreshSchool();
+    // }
     refreshSchool() {
         SchoolService.retrieveAllSchool()
             .then(
@@ -26,7 +26,7 @@ class School extends React.Component {
     render() {
 
         console.log("hello")
-
+        this.refreshSchool();
         return (
             <div>                 {
                 this.state.schools.map(

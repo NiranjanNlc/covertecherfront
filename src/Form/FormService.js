@@ -1,7 +1,11 @@
 import axios from 'axios'
-const API_URL = 'http://localhost:9001'
+const API_URL = ''
 const SCHOOL_API_URL = `${API_URL}/listTeacher`
 
+export const TOKEN="token"
+export const headers = { 
+  'Authorization': 'Bearer '+localStorage.getItem(TOKEN)
+}
 const FORM_API_URL = `${API_URL}/admin/save`
 class FormService {
 
@@ -22,7 +26,7 @@ class FormService {
       subject: $subjet,
       location: $loc,
       time: $time
-    })
+    },{headers:headers})
       .then(function (response) {
         console.log(response);
       })

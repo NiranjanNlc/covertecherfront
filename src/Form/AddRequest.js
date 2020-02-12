@@ -26,6 +26,7 @@ class AddRequest extends React.Component {
 
     console.log(this.state.sname)
     FormService.addRequest(this.state.sname, this.state.sub, this.state.time, this.state.loc)
+    this.props.history.push(`/teacher`)
 
   }
   render() {

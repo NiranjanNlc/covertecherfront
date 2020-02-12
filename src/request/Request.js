@@ -11,9 +11,9 @@ class Request extends React.Component {
         }
         this.refreshRequest = this.refreshRequest.bind(this)
     }
-    componentDidMount() {
-        this.refreshRequest();
-    }
+    // componentDidMount() {
+    //     this.refreshRequest();
+    // }
     refreshRequest() {
         RequestService.retrieveAllREQUEST()
             .then(response => {
@@ -23,7 +23,7 @@ class Request extends React.Component {
             )
     }
     render() {
-
+           this.refreshRequest()
 
         return (
             <div>

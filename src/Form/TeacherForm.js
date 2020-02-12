@@ -11,7 +11,8 @@ class TeacherForm extends React.Component {
       ph: '',
       sub: 'nn',
       tim: 'nnn',
-      psw:'ajjjs'
+      psw:'ajjjs',
+      rid:'jjj'
     }
     this.submitData = this.submitData.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -22,7 +23,7 @@ class TeacherForm extends React.Component {
     const { name, value } = event.target
     this.setState({
       [name]: value
-    })
+    }) 
   }
 
   submitData(event) {
@@ -30,7 +31,7 @@ class TeacherForm extends React.Component {
     console.log(this.state.name)
     const teaxherSignup = {
       name: this.state.name,
-      userId:this.state.name,
+      userId:this.state.rid,
       location: this.state.loc,
       phone: this.state.ph ,
       time:this.state.tim,
@@ -48,7 +49,7 @@ class TeacherForm extends React.Component {
     return (
 
       <div className="form">
-        <form action="action_page.php" style={{ "border": '1px solid #ccc' }}>
+        <form   style={{ "border": '1px solid #ccc' }}>
           <div class="container">
             <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
@@ -70,6 +71,10 @@ class TeacherForm extends React.Component {
 
             <label for="Subject"><b>Subject</b></label>
             <input type="text" placeholder="Enter Subject" name="sub" required onChange={this.handleChange} />
+
+            <label for="id"><b>UserId</b></label>
+            <input type="text" placeholder="Enter Registration id" name="rid" onChange={this.handleChange} required />
+
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required onChange={this.handleChange} />

@@ -34,8 +34,16 @@ class AddSchool extends React.Component {
       roles:"school"
     };
     SchoolService.addSchoolRequest(schoolSignup)
-    this.props.history.push("/login/")
-
+   
+    SchoolService.addSchoolRequest(schoolSignup)
+    .then((response) => {
+      console.log(response)
+      console.log( response.data.accessToken)
+        console.log("trying to push ")
+        this.props.history.push("/login/")
+    }).catch(() => {
+       console.log("error in adding ")
+    })
   //   const schoolSignup = {
   //     name: this.state.sname.value,
   //     location: this.state.loc.value,

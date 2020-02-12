@@ -9,18 +9,22 @@ export const SCHOOL_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedSchool'
 
 class AuthenticatedRoute extends Component {
     render() {
-        if ((localStorage.getItem(USER_NAME_SESSION_ATTRIBUTE_NAME) === null))
+        if ((localStorage.getItem(USER_NAME_SESSION_ATTRIBUTE_NAME) === null ))
         {
-            console.log('hello from redirection')
-            return <Redirect to="/login" />
+            if ((localStorage.getItem(SCHOOL_NAME_SESSION_ATTRIBUTE_NAME) === null ))
+        {
+             return <Redirect to="/login" />
+           
+        } 
+         return    <Route {...this.props} />
         }
          else 
         
         {
-        //    console.log(SCHOOL_NAME_SESSION_ATTRIBUTE_NAME)
-            return (
-        <Route {...this.props} /> 
-            )
+         console.log("jpt")
+         console.log(SCHOOL_NAME_SESSION_ATTRIBUTE_NAME)
+            return    <Route {...this.props} /> 
+        
         }
 
     }

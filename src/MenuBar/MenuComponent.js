@@ -25,8 +25,9 @@ class MenuComponent extends Component {
 
                     </ul>
                     <ul className="navbar-nav navbar-collapse justify-content-end">
-                        {!loggedIn && <li><Link className="nav-link" to="/login">Login</Link></li>}
-                        {loggedIn && <li><Link className="nav-link" to="/logout" onClick={AuthenticationService.logout}>Logout</Link></li>}
+                    {!loggedIn && <li><Link className="nav-link" to="/login">Login</Link></li>}
+                    {!loggedIn && <li><Link className="nav-link" to="/chose">SignUp </Link></li>}
+                    {loggedIn && <li><Link className="nav-link" to="/logout" onClick={AuthenticationService.logout}>Logout</Link></li>}
                     </ul>
                 </nav>
             </header>
