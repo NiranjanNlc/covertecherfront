@@ -1,4 +1,5 @@
 import React from 'react' 
+import { BrowserRouter as Router, Route, history, Redirect ,Link} from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
@@ -12,7 +13,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
+//import Link from '@material-ui/core/Link';
 import '../MenuBar/Bootstrap.css'
 
 import RequestService from '../request/RequestService'
@@ -58,10 +59,15 @@ class Home  extends React.Component {
             <main>
               {/* Hero unit */}
               <div className="herocontent" style={{}}>
+              <div className="hero_over" >
+              <div className="overlay" >
+              
                 <Container maxWidth="sm">
+                  <div className='hero-text'>
                   <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                 Cover Teacher
                   </Typography>
+                  </div>
                   <Typography variant="h5" align="center" color="textSecondary" paragraph>
                     Need a   subsitute for the teacher in their absence  .We have the competent list of trained 
                     and skilled manpower .
@@ -70,17 +76,20 @@ class Home  extends React.Component {
                     <Grid container spacing={2} justify="center">
                       <Grid item>
                         <Button variant="contained" color="primary">
-                          SignUp to post request  
+                        <Link to="/SignUp">  School SignUp  </Link>
                         </Button>
                       </Grid>
                       <Grid item>
                         <Button variant="outlined" color="primary">
-                          Add yourself on the list 
+                        <Link to="/add"> Teacher Signup </Link>
                         </Button>
                       </Grid>
+                      
                     </Grid>
                   </div>
                 </Container>
+                </div>
+              </div>
               </div>
               <Container className="cardGrid clearfix" maxWidth="md" >
               {

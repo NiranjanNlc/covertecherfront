@@ -1,6 +1,8 @@
 /* Bordered form */
 form {
     border: 3px solid #f1f1f1;
+    margin-top: 8px;
+    position: relative;
   }
   
   
@@ -77,4 +79,24 @@ form {
     .cancelbtn {
       width: 100%; 
     }
+  }
+  
+  /*latest added ko laggi */
+  .paper{
+    marginTop: 8px;
+    display: 'flex';
+    flexDirection: 'column';
+    alignItems: 'center';
+  }
+  .avatar
+   {
+    margin: 1px;
+    /* backgroundColor: theme.palette.secondary.main, */
+  }
+  .form {
+    width: '100%'; 
+    marginTop: 1px;
+  }
+  .submit {
+    margin: 3 0 2 ;
   }

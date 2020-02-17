@@ -1,4 +1,45 @@
-cardGrid {
+main { 
+}
+.backimage
+{ 
+}
+.overlay { 
+  /* min-height: 100%;
+  min-width: 100%;
+  left: 0;
+  top: 0; */ 
+}
+.herocontent {
+  height: 94vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://wwwassets.rand.org/content/rand/blog/2014/08/flexibility-is-key-in-administrations-call-for-teacher/jcr:content/par/teaser.aspectfit.0x1200.jpg/1495315509027.jpg);
+  background-position: center;
+
+}
+.overlay a {
+  color: #fff;
+}
+.hero-text h1, .overlay p
+{
+color: #fff;
+}
+.overlay .MuiButton-outlinedPrimary {
+  color: #fff;
+  border: 1px solid #fff;
+}
+.hero_over {
+  width: 100%;
+  background: #0000002e;
+  height: 94vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cardGrid {
   paddingTop: 8px;
   paddingBottom : 8px;
 }
@@ -30,4 +71,9 @@ cardGrid {
 }
 .cardGrid .card-body {
 padding: 10px;
+}
+.navbar-dark .navbar-nav .nav-link
+{
+  color: rgba(255,255,255,1.5); 
+
 }

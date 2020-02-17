@@ -15,15 +15,14 @@ class TeacherService {
   }
 
   saveTeacher(signup) {
-
-
     axios.post(SAVE_API_URL,signup)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
   }
 }
 

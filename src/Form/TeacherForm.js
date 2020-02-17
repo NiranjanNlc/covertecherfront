@@ -41,7 +41,9 @@ class TeacherForm extends React.Component {
       email:"nlc@gmail.com",
       roles:"teacher"
     };
+    console.log(teaxherSignup)
     TeacherService.saveTeacher(teaxherSignup)
+    
 
   }
   render() {

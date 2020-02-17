@@ -33,8 +33,8 @@ function App() {
             <Route path="/add/" component={TeacherForm} />
             <Route path="/chose/" component={Choice} />
             
-{/*             
-            <Route path="/signup/" component={AddSchool} /> */}
+            
+            <Route path="/signup/" component={AddSchool} />
           </Switch>
         </>
 
