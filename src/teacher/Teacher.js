@@ -71,7 +71,12 @@ class Teacher extends React.Component {
                       <div key={Request.id} style={{ "float": 'left' }}>
                                     Name:<b>{teacher.name}</b><br></br>
                                     Location:<b>{teacher.location}</b><br></br>
-                                    Subject:<b>Nijgadh</b><br></br>
+                                    Subject:<b>{teacher.subject.map(
+                                    call =>
+                                        <b key={call.id}>{call.sub},</b>
+                                )
+
+                                }</b><br></br>
                                     Time :<b>{teacher.time}</b><br></br>
                                     <a href="#" class="btn btn-primary">Book  </a>
                      
