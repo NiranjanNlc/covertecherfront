@@ -17,7 +17,7 @@ class SchoolService {
     return axios.get(`${SCHOOL_API_URL}`);
   }
   addSchoolRequest($signupschool) {
-   // console.log(JSON.parse($signupschool))
+    console.log(($signupschool))
     //  console.log($school+$subjet+$time)
     axios.post(ADD_SCHOOL_API_URL,$signupschool)
       .then(function (response) {

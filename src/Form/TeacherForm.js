@@ -1,7 +1,7 @@
 import React from 'react'
 import './TeacherForm.css'
 import TeacherService from '../teacher/TeacherService'
-
+import Place from '../Authenciation/Place'  
 class TeacherForm extends React.Component {
   constructor(props) {
     super(props)
@@ -16,8 +16,13 @@ class TeacherForm extends React.Component {
     }
     this.submitData = this.submitData.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleLo=this.handleLo.bind(this)
   }
-
+  handleLo(location) { 
+    this.setState(
+     { loc:location} )
+     
+  }
   handleChange(event) {
     console.log(event.target)
     const { name, value } = event.target
@@ -65,8 +70,8 @@ class TeacherForm extends React.Component {
             <input type="text" placeholder="Enter Phone " name="ph" required onChange={this.handleChange} />
 
             <label for="location"><b>Location </b></label>
-            <input type="text" placeholder="Enter Location" name="loc" required onChange={this.handleChange} />
-
+           {/* <input type="text" placeholder="Enter Location" name="loc1" required onChange={this.handleChange} />
+           */} <Place name="loc" onSelect={this.handleLo} ></Place>
 
             <label for="time"><b>Time</b></label>
             <input type="text" placeholder="Enter time/shift" name="tim" required onChange={this.handleChange} />

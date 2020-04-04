@@ -1,6 +1,7 @@
 import React from 'react'
 import "./AddRequest.css"
 import FormService from './FormService'
+import Place from '../Authenciation/Place'
 class AddRequest extends React.Component {
   constructor(props) {
     super(props)
@@ -12,8 +13,13 @@ class AddRequest extends React.Component {
     }
     this.submitData = this.submitData.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleLo=this.handleLo.bind(this)
   }
-
+  handleLo(location) { 
+    this.setState(
+     { loc:location} )
+     
+  }
   handleChange(event) {
     console.log(event.target.value)
     const { name, value } = event.target
@@ -46,7 +52,8 @@ class AddRequest extends React.Component {
             <input type="text" placeholder="Enter Subject " name="sub" onChange={this.handleChange} required />
 
             <label for="Location"><b>Location </b></label>
-            <input type="text" placeholder="Enter Location " name="loc" onChange={this.handleChange} required />
+           {/* <input type="text" placeholder="Enter Location" name="loc1" required onChange={this.handleChange} />
+           */}<Place name="loc" onSelect={this.handleLo} ></Place>
 
             <label for="Time"><b>Time</b></label>
             <input type="text" placeholder="Enter Time" name="time" onChange={this.handleChange} required />

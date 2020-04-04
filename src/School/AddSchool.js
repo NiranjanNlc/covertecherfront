@@ -1,6 +1,9 @@
 import React from 'react'
 import SchoolService from './SchoolService'
 import {ACCESS_TOKEN} from '../Utility/AppUtility.js'
+import Place from '../Authenciation/Place'
+import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete'
+
 class AddSchool extends React.Component {
   constructor(props) {
     super(props)
@@ -8,12 +11,32 @@ class AddSchool extends React.Component {
       sname: 'hh',
       loc: 'nn',
       rid: 'nn',
-      psw:'ererer'
+      psw:'ererer',
+      cord:''
     }
     this.submitData = this.submitData.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleLo = this.handleLo.bind(this)
+    this.handleCo = this.handleCo.bind(this)
+  
   }
-
+  handleLo(location) { 
+    this.setState(
+     { loc:location} )
+     const setFormLocation = this.handleCo
+     geocodeByAddress(location)
+      .then(function(results){
+         setFormLocation(results[0].formatted_address)
+      })
+      .catch(error => console.error('Error', error))
+    
+  }
+  handleCo(cordinate) { 
+    this.setState({
+      cord: cordinate
+    })
+  }
+   
   handleChange(event) {
     console.log(event.target.value)
     const { name, value } = event.target
@@ -30,6 +53,7 @@ class AddSchool extends React.Component {
       location: this.state.loc,
       userId: this.state.rid ,
       password: this.state.psw,
+      cordinate :this.state.cord,
       email:"niranjannlc10@gmail.com",
       roles:"school"
     };
@@ -89,7 +113,8 @@ class AddSchool extends React.Component {
             <input type="text" placeholder="Enter Schoolname" name="sname" onChange={this.handleChange} required />
 
             <label for="loc"><b>Location </b></label>
-            <input type="text" placeholder="Enter Location " name="loc" onChange={this.handleChange} required />
+            {/* <input type="text" placeholder="Enter Location" name="loc1" required onChange={this.handleChange} />
+           */} <Place name="loc" onSelect={this.handleLo} ></Place>
 
             <label for="id"><b>UserId</b></label>
             <input type="text" placeholder="Enter Registration id" name="rid" onChange={this.handleChange} required />
